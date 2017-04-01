@@ -15,9 +15,9 @@ Notes:
 
 ### Usage
 1. Install required software
-2. Connect the phone to the Wifi network
+2. Connect the phone to the local network
 3. Run [MusicRemote.py](/MusicRemote.py)
-4. Use Macrodroid to send *0, 1 or 2* to the host
+4. Use Macrodroid (or other) to send **0, 1 or 2** to the host
 
 ### Description
 This script listens to the UDP stream on a given
