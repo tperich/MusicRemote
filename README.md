@@ -16,4 +16,5 @@ Notes:
 ### Usage
 1. Install required software
 2. Connect the phone to the Wifi network
-3. Use Macrodroid to send *0, 1 or 2* to the host
+3. Run [MusicRemote.py](/MusicRemote.py)
+4. Use Macrodroid to send *0, 1 or 2* to the host
