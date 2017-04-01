@@ -14,7 +14,7 @@ Notes:
 >Macrodroid is not necessary.
 
 ### Usage
-1. Install required software
+1. Acquire required software
 2. Connect the phone to the local network
 3. Run [MusicRemote.py](/MusicRemote.py)
 4. Use Macrodroid (or other) to send **0, 1 or 2** to the host
