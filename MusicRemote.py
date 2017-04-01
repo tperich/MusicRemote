@@ -60,7 +60,7 @@ class Music():
 PacketListener("",1337).udp_listener()
 
 
-'''// Deprecated - use if looping only one song //
+'''  Deprecated - use if looping only one song
 # song = pyglet.media.load("Music/dope_dod-dealwiththedevil.mp3")
 # looper = pyglet.media.SourceGroup(song.audio_format, None)
 # looper.loop = True
