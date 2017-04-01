@@ -24,6 +24,7 @@ player = pyglet.media.Player()
 for song in range(len(playlist)):
 	song = pyglet.resource.media(playlist[song])
 	player.queue(song)
+
 # song = pyglet.media.load("Music/dope_dod-dealwiththedevil.mp3")
 # looper = pyglet.media.SourceGroup(song.audio_format, None)
 # looper.loop = True
