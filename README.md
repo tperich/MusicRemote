@@ -18,3 +18,18 @@ Notes:
 2. Connect the phone to the Wifi network
 3. Run [MusicRemote.py](/MusicRemote.py)
 4. Use Macrodroid to send *0, 1 or 2* to the host
+
+### Description
+This script listens to the UDP stream on a given
+host address and port, and acts accordingly to
+the incoming data.
+The UDP packets are sent from an Android phone
+to the listening host using the MacroDroid app.
+
+The process can be improved if port in use is
+forwarded and the user has a static IP address
+or uses a DNS syncing service.
+
+Pyglet is used for playing music, not mandatory
+for the script to work. Note: You will also need
+AVlib for playing mp3 files using Pyglet.
