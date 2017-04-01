@@ -1,15 +1,16 @@
 import pyglet, socket, glob, os
+from modules import detect_os
 
 # This script listens to the UDP stream on a given
 # host address and port, and acts accordingly to
 # the incoming data.
 # The UDP packets are sent from an Android phone
 # to the listening host using the MacroDroid app.
-#
+
 # The process can be improved if port in use is
 # forwarded and the user has a static IP address
 # or uses a DNS syncing service.
-#
+
 # Pyglet is used for playing music, not mandatory
 # for the script to work. Note: You will also need
 # AVlib for playing mp3 files using Pyglet.
@@ -18,12 +19,14 @@ import pyglet, socket, glob, os
 # Define Pyglet and music variables and add songs
 # to the player queue.
 song_playing = 0
+clear = detect_os.detect()
 playlist = glob.glob("*.mp3")
 player = pyglet.media.Player()
 for song in range(len(playlist)):
 	song = pyglet.resource.media(playlist[song])
 	player.queue(song)
 
+# // Deprecated - use if looping one song //
 # song = pyglet.media.load("Music/dope_dod-dealwiththedevil.mp3")
 # looper = pyglet.media.SourceGroup(song.audio_format, None)
 # looper.loop = True
@@ -38,8 +41,8 @@ class PacketListener():
 
 	def udp_listener(self):
 		print("[x] Server Started")
-		# Listen for incoming UDP traffic
 		while True:
+			# Listen for incoming UDP traffic
 			inbound_data, client_address = self.sock.recvfrom(1024)
 			self.music_controller(inbound_data.decode("utf-8"))
 
@@ -51,33 +54,27 @@ class PacketListener():
 		elif inbound_data == "2":
 			Music().next_song()
 		else:
-			# No data received, go back to listening
+			# No/other data received, go back to listening
 			pass
 
 
 class Music():
-	'''def __init__(self):
-		if song_playing == 0:
-			self.play_song()
-		else:
-			self.stop_song()'''
-
 	def play_song(self):
 		song_playing = 1
 		player.play()
-		os.system("cls")
+		os.system(clear)
 		print("[x] Music playing")
 
 	def stop_song(self):
 		song_playing = 0
 		player.pause()
-		os.system("cls")
+		os.system(clear)
 		print("[x] Music stopped")
 
 	def next_song(self):
 		# Take next song from queue
 		player.next_source()
-		os.system("cls")
+		os.system(clear)
 		print("[x] Next song")
 		#print("No more songs :(")
 
