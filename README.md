@@ -21,8 +21,8 @@ Notes:
 
 ### Description
 This script listens to the UDP stream on a given
-host address and port, and acts accordingly to
-the incoming data.
+host address and port, and acts accordingly depending
+on the incoming data.
 The UDP packets are sent from an Android phone
 to the listening host using the MacroDroid app.
 
