@@ -9,7 +9,9 @@ Use your phone to control the music on your computer
 
 Notes:
 > AVbin is necessary for mp3 playback. It is otherwise not needed.
-> You can use other ways of sending UDP packets to the host, Macrodroid is not necessary.
+
+> You can use other ways of sending UDP packets to the host,
+>Macrodroid is not necessary.
 
 ### Usage
 1. Install required software
