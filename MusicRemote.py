@@ -1,21 +1,6 @@
 import pyglet, socket, glob, os
 from modules import detect_os
 
-# This script listens to the UDP stream on a given
-# host address and port, and acts accordingly to
-# the incoming data.
-# The UDP packets are sent from an Android phone
-# to the listening host using the MacroDroid app.
-
-# The process can be improved if port in use is
-# forwarded and the user has a static IP address
-# or uses a DNS syncing service.
-
-# Pyglet is used for playing music, not mandatory
-# for the script to work. Note: You will also need
-# AVlib for playing mp3 files using Pyglet.
-
-
 # Define Pyglet and music variables and add songs
 # to the player queue.
 song_playing = 0
@@ -26,7 +11,7 @@ for song in range(len(playlist)):
 	song = pyglet.resource.media(playlist[song])
 	player.queue(song)
 
-# // Deprecated - use if looping one song //
+# // Deprecated - use if looping only one song //
 # song = pyglet.media.load("Music/dope_dod-dealwiththedevil.mp3")
 # looper = pyglet.media.SourceGroup(song.audio_format, None)
 # looper.loop = True
@@ -54,7 +39,7 @@ class PacketListener():
 		elif inbound_data == "2":
 			Music().next_song()
 		else:
-			# No/other data received, go back to listening
+			# None or other data received, go back to listening
 			pass
 
 
@@ -76,7 +61,6 @@ class Music():
 		player.next_source()
 		os.system(clear)
 		print("[x] Next song")
-		#print("No more songs :(")
 
 # Pass local address and port
 # If the address is left empty
