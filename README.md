@@ -29,3 +29,5 @@ to the listening host using the MacroDroid app.
 The process can be improved if port in use is
 forwarded and the user has a static IP address
 or uses a DNS syncing service.
+
+All suggestions are welcome.
