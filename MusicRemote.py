@@ -2,13 +2,12 @@ import pyglet, socket, glob, os
 
 # This script listens to the UDP stream on a given
 # host address and port, and acts accordingly to
-# the incoming data. It should play music at the
-# moment.
+# the incoming data.
 # The UDP packets are sent from an Android phone
 # to the listening host using the MacroDroid app.
 #
-# The process can be improved if port in use (1337)
-# is forwarded and the user has a static IP address
+# The process can be improved if port in use is
+# forwarded and the user has a static IP address
 # or uses a DNS syncing service.
 #
 # Pyglet is used for playing music, not mandatory
