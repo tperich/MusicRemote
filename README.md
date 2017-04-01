@@ -5,7 +5,7 @@ Use your phone to control the music on your computer
 * [Python 3+](https://www.python.org/downloads/)
 * [Pyglet](https://bitbucket.org/pyglet/pyglet/wiki/Download) - Multimedia Library
 * [AVlib](https://avbin.github.io/AVbin/Download.html) - Mp3 Playback
-* [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid) - Android automation app
+* [Macrodroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid) - Android Automation
 
 Notes:
 > AVbin is necessary for mp3 playback. It is otherwise not needed.
@@ -29,7 +29,3 @@ to the listening host using the MacroDroid app.
 The process can be improved if port in use is
 forwarded and the user has a static IP address
 or uses a DNS syncing service.
-
-Pyglet is used for playing music, not mandatory
-for the script to work. Note: You will also need
-AVlib for playing mp3 files using Pyglet.
