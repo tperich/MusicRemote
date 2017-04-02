@@ -1,9 +1,9 @@
 import pyglet, socket, glob, os
-from modules import detect_os
+from modules import check_os
 
 # Define Pyglet and music variables and add songs
 # to the music player queue.
-clear_screen = detect_os.detect()
+clear = check_os.clear()
 song_playlist = glob.glob("*.mp3")
 music_player = pyglet.media.Player()
 for item in range(len(song_playlist)):
@@ -39,18 +39,18 @@ class PacketListener():
 class Music():
 	def play_song(self):
 		music_player.play()
-		os.system(clear_screen)
+		os.system(clear)
 		print("[x] Music playing")
 
 	def stop_song(self):
 		music_player.pause()
-		os.system(clear_screen)
+		os.system(clear)
 		print("[x] Music stopped")
 
 	def next_song(self):
 		# Take next song from queue
 		music_player.next_source()
-		os.system(clear_screen)
+		os.system(clear)
 		print("[x] Next song")
 
 # Pass local address and port.
@@ -58,10 +58,3 @@ class Music():
 # the packets are received from
 # all hosts.
 PacketListener("",1337).udp_listener()
-
-
-'''  Deprecated - use if looping only one song
-# song = pyglet.media.load("Music/dope_dod-dealwiththedevil.mp3")
-# looper = pyglet.media.SourceGroup(song.audio_format, None)
-# looper.loop = True
-# looper.queue(song)```
