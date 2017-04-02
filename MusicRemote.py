@@ -18,7 +18,9 @@ class PacketListener():
 		self.sock.bind((l_host,l_port))
 
 	def udp_listener(self):
-		print("[x] Server Started")
+		os.system(clear)
+		Dashboard().show_playlist()
+		print("[×] Server Started")
 		while True:
 			# Listen for incoming UDP traffic
 			inbound_data, client_address = self.sock.recvfrom(1024)
@@ -40,18 +42,29 @@ class Music():
 	def play_song(self):
 		music_player.play()
 		os.system(clear)
+		Dashboard().show_playlist()
 		print("[x] Music playing")
 
 	def stop_song(self):
 		music_player.pause()
 		os.system(clear)
-		print("[x] Music stopped")
+		Dashboard().show_playlist()
+		print("[ ] Music stopped")
 
 	def next_song(self):
 		# Take next song from queue
 		music_player.next_source()
 		os.system(clear)
-		print("[x] Next song")
+		Dashboard().show_playlist()
+		print("[>] Next song")
+
+
+class Dashboard():
+	def show_playlist(self):
+		print("[i] Playlist:")
+		for song in song_playlist:
+			print("    •  {}".format(song))
+		print("")
 
 # Pass local address and port.
 # If the address is left empty
