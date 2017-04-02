@@ -1,1 +1,1 @@
-__all__ = ["detect_os"]
+__all__ = ["clear"]
