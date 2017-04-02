@@ -1,7 +1,6 @@
 import platform
 def detect():
     if platform.system() == "Windows":
-        clear = "cls"
+        return "cls"
     else:
-        clear = "clear"
-    return clear
+        return "clear"
